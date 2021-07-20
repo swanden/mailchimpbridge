@@ -2,7 +2,14 @@ mailchimpbridge.settingsform:
   path: '/admin/config/development/mailchimpbridge'
   defaults:
     _form: 'Drupal\mailchimpbridge\Form\SettingsForm'
-    _title: 'MailchimpBridge settings'
+    _title: 'MailchimpBridge Settings'
   requirements:
     _permission: 'administer site configuration'
 
+mailchimpbridge.campaignsadminform:
+  path: '/admin/mailchimpbridge/campaigns'
+  defaults:
+    _title: 'Campaigns Admin Form'
+    _form: 'Drupal\mailchimpbridge\Form\CampaignsAdminForm'
+  requirements:
+    _permission: 'access content'

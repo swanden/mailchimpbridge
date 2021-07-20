@@ -1,0 +1,18 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+
+function mailchimpbridge_entity_delete(EntityInterface $entity)
+{
+  $entityType = $entity->getEntityTypeId();
+  $entityID = $entity->id();
+  if ($entityType === 'node') {
+    \Drupal::database()->delete('mailchimpbridge_campaigns')
+      ->condition('node_id', $entityID)
+      ->execute();
+  }
+}
+
+function mailchimpbridge_preprocess_toolbar(&$variables) {
+  $variables['#attached']['library'][] = 'mailchimpbridge/mailchimpbridge.toolbar';
+}

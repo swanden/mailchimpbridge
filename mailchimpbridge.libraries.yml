@@ -1,0 +1,5 @@
+mailchimpbridge.toolbar:
+  version: VERSION
+  css:
+    theme:
+      css/mailchimpbridge.toolbar.css: {}

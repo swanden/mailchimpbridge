@@ -1,0 +1,54 @@
+<?php
+
+use Drupal\user\RoleInterface;
+
+function mailchimpbridge_install() {
+  user_role_change_permissions(RoleInterface::ANONYMOUS_ID, array(
+      'mailchimpbridge' => TRUE,
+  ));
+}
+
+function mailchimpbridge_schema() {
+    $schema['mailchimpbridge_campaigns'] = array(
+        'description' => 'Table for storing mailchimp campaigns data',
+        'fields' => array(
+            'id' => array(
+                'description' => 'Mailchimp campaign id',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'web_id' => array(
+                'description' => 'Mailchimp campaign web id',
+                'type' => 'int',
+                'not null' => TRUE,
+            ),
+            'node_id' => array(
+                'description' => 'Drupal node id',
+                'type' => 'int',
+                'not null' => TRUE,
+            ),
+            'title' => array(
+                'description' => 'Mailchimp campaign title',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'author' => array(
+                'description' => 'Mailchimp campaign author',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => FALSE,
+            ),
+            'created_at' => array(
+                'description' => 'Mailchimp campaign creation date',
+                'type' => 'int',
+                'not null' => FALSE,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

@@ -1,0 +1,6 @@
+mailchimpbridge.admin:
+  title: 'MailchimpBridge'
+  description: 'MailchimpBridge'
+  parent: system.admin
+  menu_name: mailchimpbridge.admin
+  route_name: mailchimpbridge.campaignsadminform

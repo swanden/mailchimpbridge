@@ -1,0 +1,9 @@
+{
+    "name": "swanden/mailchimpbridge",
+    "description": "Provides a user interface to interacts with Mailchimp API and import campaigns",
+    "type": "drupal-module",
+    "license": "GPL-2.0+",
+    "require": {
+        "mailchimp/marketing": "^3.0"
+    }
+}
