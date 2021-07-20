@@ -10,6 +10,6 @@ mailchimpbridge.campaignsadminform:
   path: '/admin/mailchimpbridge/campaigns'
   defaults:
     _title: 'Campaigns Admin Form'
-    _form: 'Drupal\mailchimpbridge\Form\CampaignsAdminForm'
+    _form: 'Drupal\mailchimpbridge\Form\Campaign\AdminForm'
   requirements:
     _permission: 'access content'

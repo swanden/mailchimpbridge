@@ -1,0 +1,15 @@
+services:
+  mailchimpbridge.apiclient:
+    class: MailchimpMarketing\ApiClient
+  mailchimpbridge.mailchimpservice:
+    class: Drupal\mailchimpbridge\Service\MailChimpService
+    arguments: ['@config.factory', '@mailchimpbridge.apiclient']
+  mailchimpbridge.campaignrepository:
+    class: Drupal\mailchimpbridge\Repository\CampaignRepository
+    arguments: ['@database']
+  mailchimpbridge.table:
+    class: Drupal\mailchimpbridge\Form\Campaign\Table
+    arguments: ['@mailchimpbridge.mailchimpservice', '@mailchimpbridge.campaignrepository']
+  mailchimpbridge.usecaseservice:
+    class: Drupal\mailchimpbridge\UseCase\UseCaseService
+    arguments: ['@mailchimpbridge.mailchimpservice', '@mailchimpbridge.campaignrepository']
