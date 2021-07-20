@@ -1,0 +1,13 @@
+mailchimpbridge.settings:
+  type: mapping
+  label: 'MailchimpBridge settings'
+  mapping:
+    mailchimpbridge:
+      type: mapping
+      mapping:
+        server:
+          type: text
+          label: 'Mailchimp server:'
+        api_key:
+          type: text
+          label: 'Mailchimp api key:'
