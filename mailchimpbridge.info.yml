@@ -1,0 +1,6 @@
+name: Mailchimp bridge
+type: module
+description: 'Provides a user interface to interacts with Mailchimp API and import campaigns'
+package: Development
+core: '8.x'
+configure: mailchimpbridge.form
